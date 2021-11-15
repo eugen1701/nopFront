@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="105" height="67.368" viewBox="0 0 105 67.368">
+  <g id="Group_7" data-name="Group 7" transform="translate(-159 -47.632)">
+    <text id="NOP" transform="translate(159 98)" fill="#101010" font-size="47" font-family="Nunito-Black, Nunito" font-weight="800"><tspan x="0" y="0">NOP</tspan></text>
+    <g id="Group_9" data-name="Group 9">
+      <rect id="Rectangle_2" data-name="Rectangle 2" width="12" height="4" rx="2" transform="translate(192.138 54.132) rotate(45)" fill="#1bb484"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" width="12" height="4" rx="2" transform="translate(215.5 47.632) rotate(90)" fill="#1bb484"/>
+      <rect id="Rectangle_4" data-name="Rectangle 4" width="12" height="4" rx="2" transform="translate(237.734 56.96) rotate(135)" fill="#1bb484"/>
+      <rect id="Rectangle_5" data-name="Rectangle 5" width="12" height="4" rx="2" transform="translate(203.814 48.324) rotate(70)" fill="#1bb484"/>
+      <rect id="Rectangle_6" data-name="Rectangle 6" width="12" height="4" rx="2" transform="translate(228.288 50.01) rotate(113)" fill="#1bb484"/>
+    </g>
+  </g>
+</svg>

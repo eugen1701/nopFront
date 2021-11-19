@@ -18,8 +18,8 @@ export const Header: React.FC = () => {
       </nav>
 
       <ul id="header__nav-buttons" className="ul flex-pull-right">
-        <li><button className="button-green-neutral">Register</button></li>
-        <li><button className="button-no-background">Sign In</button></li>
+        <li><button className="button-green-neutral button-small">Register</button></li>
+        <li><button className="button-no-background button-small">Sign In</button></li>
       </ul>
     </header>
   )

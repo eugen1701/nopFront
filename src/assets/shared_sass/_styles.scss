@@ -16,6 +16,14 @@
   &-small {
     font-size: 0.9em;
   }
+
+  &-medium {
+    font-size: 1.4em;
+  }
+
+  &-xlarge {
+    font-size: 4em;
+  }
 }
 
 .button {
@@ -36,12 +44,27 @@
     background: $green-neutral;
     color: $green;
   }
+
+  &-green {
+    @extend .button;
+    background: $green;
+    color: white;
+  }
+
+  &-xlarge {
+    padding: 0.9em 1.5em;
+    font-size: 1.4em;
+  }
 }
 
 .flex {
   &-row {
     display: flex;
-    flex-direction: row;
+
+    &-center-y {
+      @extend .flex-row;
+      align-items: center;
+    }
   }
 
   &-pull-right {

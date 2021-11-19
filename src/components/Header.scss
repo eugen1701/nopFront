@@ -1,17 +1,18 @@
-$home-page-menu-offset: 37.5vw;
+@import '../assets/shared_sass/variables';
 
 #header {
   display: flex;
   align-items: center;
-  height: 14vh;
+  height: $header-height;
   width: 100vw;
 }
 
 #header__nop-logo {
-  width: 4em;
+  width: 5.5em;
 }
 
 #header__nav {
+  position: absolute;
   margin-left: $home-page-menu-offset;
 }
 
@@ -26,9 +27,4 @@ $home-page-menu-offset: 37.5vw;
 #header__nav-buttons {
   display: flex;
   margin-left: auto;
-
-  button {
-    height: 2.25em;
-    width: 7.5em;
-  }
 }

@@ -14,13 +14,15 @@ const App: React.FC = () => {
       <div id="app">
         <Header />
 
-        <Routes>
-          <Route path= '/auth' element={ <AuthPage /> } />
-          <Route path= '/admin' element={ <AdminPage /> } />
-          <Route path= '/manager' element={ <ManagerPage /> } />
-          <Route path= '/user' element={ <UserPage /> } />
-          <Route path='/' element={ <HomePage /> } /> 
-        </Routes>
+        <div id="app__routes">
+          <Routes>
+            <Route path= '/auth' element={ <AuthPage /> } />
+            <Route path= '/admin' element={ <AdminPage /> } />
+            <Route path= '/manager' element={ <ManagerPage /> } />
+            <Route path= '/user' element={ <UserPage /> } />
+            <Route path='/' element={ <HomePage /> } /> 
+          </Routes>
+        </div>
       </div>
     </Router>
   );

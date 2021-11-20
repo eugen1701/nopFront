@@ -2,6 +2,7 @@
 
 #header {
   display: flex;
+  // gap: 7em;
   align-items: center;
   height: $header-height;
   width: 100vw;
@@ -11,20 +12,21 @@
   width: 5.5em;
 }
 
-#header__nav {
-  position: absolute;
-  margin-left: $home-page-menu-offset;
+#header__right-side {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 #header__nav-links {
   display: flex;
 
   > li {
-    margin-right: 2.5em;
+    margin-left: 2.5em;
   }
 }
 
 #header__nav-buttons {
   display: flex;
-  margin-left: auto;
+  margin-right: 3em;
 }

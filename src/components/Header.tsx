@@ -7,20 +7,25 @@ import { Link } from 'react-router-dom';
 export const Header: React.FC = () => {
   return (
     <header id="header">
-      <img src={nop_logo} id="header__nop-logo" alt="NOP Logo"/>
+      <div id="header__left-side">
+        <img src={nop_logo} id="header__nop-logo" alt="NOP Logo"/>
+      </div>
 
-      <nav id="header__nav" className="flex-row">
-        <ul id="header__nav-links" className="ul">
-          <li><Link to="/" className="link text-bold">Home</Link></li>
-          <li><Link to="/" className="link text-bold">About Us</Link></li>
-          <li><Link to="/" className="link text-bold">Contact</Link></li>
+      <div id="header__right-side">
+        <ul id="header__nav-buttons" className="ul flex-pull-right">
+          <li><button className="button-no-background button-small">Sign In</button></li>
+          <li><button className="button-green-neutral button-small">Register</button></li>
         </ul>
-      </nav>
 
-      <ul id="header__nav-buttons" className="ul flex-pull-right">
-        <li><button className="button-green-neutral button-small">Register</button></li>
-        <li><button className="button-no-background button-small">Sign In</button></li>
-      </ul>
+        <nav id="header__nav" className="flex-row">
+          <ul id="header__nav-links" className="ul">
+            <li><Link to="/" className="link text-bold">Home</Link></li>
+            <li><Link to="/" className="link text-bold">About Us</Link></li>
+            <li><Link to="/" className="link text-bold">Service</Link></li>
+            <li><Link to="/" className="link text-bold">Contact</Link></li>
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }

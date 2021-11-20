@@ -20,7 +20,7 @@
 }
 
 #home-page__left {
-  flex: 1.2 0 0;
+  flex: 1.6 0 0;
 }
 
 #home-page__right {
@@ -33,14 +33,14 @@
 //   width: auto;
 // }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1350px) {
   .text {
     &-medium {
-      font-size: 1em;
+      font-size: 0.9em;
     }
   
     &-xlarge {
-      font-size: 2.8em;
+      font-size: 2.5em;
     }
   }
 }

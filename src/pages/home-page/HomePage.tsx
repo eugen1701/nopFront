@@ -8,7 +8,7 @@ export const HomePage: React.FC = () => {
     <div id="home-page">
       <section id="home-page__left">
         <div>
-          <h1 className="h1 text-xlarge">SKYROCKET YOUR DAILY FOOD DELIVERY BUSINESS WITH MINIMUM EFFORT</h1>
+          <h1 className="h1 text-xlarge">SKYROCKET YOUR DAILY FOOD DELIVERY BUSINESS</h1>
           <br />
           <p className="text-medium">Partner with us to make a name for your local and reach thousands of customers across the country through our subscription-based platform. You can set up and manage you kitchen quickly and effortlessly.</p>
           <br />

@@ -108,6 +108,11 @@
   &-pull-right {
     margin-left: auto;
   }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .input {

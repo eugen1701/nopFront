@@ -60,6 +60,11 @@
     background: $green-neutral;
     color: $green;
   }
+  &-red-neutral {
+    @extend .button;
+    background: $red-neutral;
+    color: $red;
+  }
 
   &-green {
     @extend .button;

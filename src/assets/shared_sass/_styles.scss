@@ -8,9 +8,17 @@
   text-decoration: none;
 }
 
+.green {
+  color: $green;
+}
+
 .text {
   &-bold {
     font-weight: 700;
+  }
+
+  &-black {
+    font-weight: 900;
   }
 
   &-small {
@@ -19,6 +27,14 @@
 
   &-medium {
     font-size: 1.3em;
+  }
+
+  &-xmedium {
+    font-size: 1.9em;
+  }
+
+  &-large {
+    font-size: 2.75em;
   }
 
   &-xlarge {
@@ -30,7 +46,7 @@
   cursor: pointer;
   border: none;
   outline: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 700;
   
   &-no-background {
@@ -51,20 +67,37 @@
     color: white;
   }
 
+  &-green-bordered {
+    @extend .button;
+    border: 1px solid $green;
+    background-color: white;
+    color: $green;
+  }
+
   &-small {
     padding: 0.5em 1.1em;
     font-size: 1em;
   }
 
+  &-medium {
+    padding: 0.7em 2.3em;
+    font-size: 1.1em;
+  }
+
   &-xlarge {
-    padding: 0.9em 1.5em;
-    font-size: 1.2em;
+    padding: 0.9em 2.6em;
+    font-size: 1.3em;
   }
 }
 
 .flex {
   &-row {
     display: flex;
+
+    &-center-x {
+      @extend .flex-row;
+      justify-content: center;
+    }
 
     &-center-y {
       @extend .flex-row;
@@ -74,5 +107,24 @@
 
   &-pull-right {
     margin-left: auto;
+  }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+
+  > label {
+    font-weight: 700;
+  }
+
+  > input, textarea {
+    border: 1px solid $light-gray;
+    border-radius: 8px;
+    padding: 1em 1em;
+  }
+
+  > textarea {
+    height: 20em;
   }
 }

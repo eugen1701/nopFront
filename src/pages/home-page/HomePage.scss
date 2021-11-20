@@ -2,14 +2,8 @@
 @import '../../assets/shared_sass/styles';
 
 #home-page {
-  display: flex;
   height: calc(100vh - #{$header-height});
   gap: 7em;
-
-  > section {
-    display: flex;
-    align-items: center;
-  }
 }
 
 #home-page__hero-img {

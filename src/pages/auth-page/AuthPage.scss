@@ -1,0 +1,13 @@
+@import '../../assets/shared_sass/variables';
+
+#auth-page {
+  height: calc(100vh - #{$header-height});
+}
+
+#auth-page__left-side {
+  flex: 1 0 0;
+}
+
+#auth-page__right-side {
+  flex: 1 0 0;
+}

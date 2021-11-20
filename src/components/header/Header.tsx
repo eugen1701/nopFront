@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Header.scss";
-import "../assets/shared_sass/_styles.scss";
-import nop_logo from '../assets/svgs/nop-logo.svg';
+import "../../assets/shared_sass/_styles.scss";
+import nop_logo from '../../assets/svgs/nop-logo.svg';
 import { Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
@@ -13,8 +13,8 @@ export const Header: React.FC = () => {
 
       <div id="header__right-side">
         <ul id="header__nav-buttons" className="ul flex-pull-right">
-          <li><button className="button-no-background button-small">Sign In</button></li>
-          <li><button className="button-green-neutral button-small">Register</button></li>
+          <li><Link to="/auth/login" className="button-no-background button-small link">Log In</Link></li>
+          <li><Link to="/auth/register" className="button-green-neutral button-small link">Register</Link></li>
         </ul>
 
         <nav id="header__nav" className="flex-row">

@@ -1,0 +1,12 @@
+.register__form-ul > li {
+  margin-bottom: 1.5em;
+}
+
+.register__inputs-address-line {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    width: 45%;
+  }
+}

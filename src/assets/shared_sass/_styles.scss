@@ -26,15 +26,15 @@
   }
 
   &-medium {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
 
   &-xmedium {
-    font-size: 1.9em;
+    font-size: 1.7em;
   }
 
   &-large {
-    font-size: 2.75em;
+    font-size: 2.5em;
   }
 
   &-xlarge {
@@ -80,8 +80,8 @@
   }
 
   &-medium {
-    padding: 0.7em 2.3em;
-    font-size: 1.1em;
+    padding: 0.5em 2em;
+    font-size: 1em;
   }
 
   &-xlarge {
@@ -130,7 +130,7 @@
   > input, textarea {
     border: 1px solid $light-gray;
     border-radius: 8px;
-    padding: 1em 1em;
+    padding: 0.75em 1em;
   }
 
   > textarea {

@@ -1,7 +1,8 @@
 @import '../../assets/shared_sass/variables';
 
 #auth-page {
-  height: calc(100vh - #{$header-height});
+  width: 100%;
+  gap: 5em;
 }
 
 #auth-page__left-side {
@@ -10,4 +11,9 @@
 
 #auth-page__right-side {
   flex: 1 0 0;
+
+  > img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }

@@ -10,3 +10,19 @@
     width: 45%;
   }
 }
+
+#register__back {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  gap: 1em;
+
+  > img {
+    width: 1.1em;
+  }
+
+  > p {
+    text-decoration: underline;
+  }
+}

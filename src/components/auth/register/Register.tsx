@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './Register.scss';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import backArrow from '../../../assets/svgs/back-arrow.svg';
 
 interface IAddress {
   country: string,
@@ -290,9 +291,30 @@ export const Register: React.FC = () => {
     return <button className="button-green button-medium" onClick={(e) => { validateFormPage(e); submitRegisrationForm()}}>Finish Registration</button>
   }
 
+  function goBack() {
+    if (currentPage != 2 && currentPage != 3)  {
+      return;
+    }
+    setCurrentPage(currentPage - 1);
+  }
+
+  function renderBackButton() {
+    if(currentPage === 2 || currentPage === 3) {
+      return (
+        <button id="register__back" className="flex-row-center-y" onClick={goBack}>
+          <img src={backArrow} alt="" />
+          <p className="text-medium">Previous Page</p>
+        </button>
+      );
+    }
+    return null;
+  }
+
   return (
     <div id="register">
       <h1 id="register__heading" className="text-black text-large">Register Your Kitchen</h1>
+      <br />
+      { renderBackButton() }
       <br/>
       <form id="register__paginated-form">
         { renderCurrentFormPage() }

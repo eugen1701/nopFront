@@ -8,6 +8,8 @@ import { AdminPage } from './pages/admin-page/AdminPage';
 import { ManagerPage } from './pages/manager-page/ManagerPage';
 import { UserPage } from './pages/user-page/UserPage';
 
+require('dotenv').config();
+
 const App: React.FC = () => {
   return (
     <BrowserRouter>

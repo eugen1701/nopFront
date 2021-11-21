@@ -80,7 +80,7 @@
   }
 
   &-small {
-    padding: 0.5em 1.1em;
+    padding: 0.4em 2em;
     font-size: 1em;
   }
 
@@ -110,13 +110,17 @@
     }
   }
 
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+
   &-pull-right {
     margin-left: auto;
   }
 
-  &-column {
-    display: flex;
-    flex-direction: column;
+  &-space-between {
+    justify-content: space-between;
   }
 }
 

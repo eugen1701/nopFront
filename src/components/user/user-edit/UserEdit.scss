@@ -1,0 +1,23 @@
+@import '../../../assets/shared_sass/styles';
+
+#user-edit > button {
+    margin-right: 1em;
+}
+
+#user-edit__form {
+  width: 100%;
+  gap: 6em;
+  flex-wrap: wrap;
+
+  > ul {
+    flex: 0.35 1 0;
+
+    > li {
+      margin-bottom: 1.5em;
+    }
+  }
+}
+
+#user-edit__form-button-wrapper {
+  flex: 0 0 100%;
+}

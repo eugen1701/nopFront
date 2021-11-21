@@ -116,14 +116,44 @@ export const Register: React.FC = () => {
     }
   }
 
-  function goToNextPage(e: React.MouseEvent<HTMLElement>) {
+  function processFormPage1(): boolean {
+    return true
+  }
+
+  function processFormPage2(): boolean {
+    return true;
+  }
+
+  function processFormPage3(): boolean {
+    return true;
+  }
+
+  function processFormPage(): boolean {
+    switch (currentPage) {
+      case 1:
+        return processFormPage1();
+      case 2:
+        return processFormPage2();
+      case 3:
+        return processFormPage3();
+      default:
+        return false;
+    }
+    
+    return true;
+  }
+
+  function submitFormPage(e: React.MouseEvent<HTMLElement>) {
     e.preventDefault();
-    setCurrentPage(currentPage + 1);
+
+    if(currentPage < 3 && processFormPage()) {
+      setCurrentPage(currentPage + 1); return;
+    }
   }
 
   function renderFormButton(): JSX.Element {
     if(currentPage == 1 || currentPage == 2) {
-      return <button className="button-green-bordered button-medium" onClick={(e) => goToNextPage(e)}>Continue</button>
+      return <button className="button-green-bordered button-medium" onClick={(e) => submitFormPage(e) }>Continue</button>
     }
     return <button type="submit" className="button-green button-medium">Finish Registration</button>
   }

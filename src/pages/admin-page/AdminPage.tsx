@@ -2,8 +2,14 @@ import React, {Fragment} from 'react'
 import authPageSvg from "../../assets/svgs/auth-illustration.svg";
 import {Link} from "react-router-dom";
 import './AdminPage.scss'
+import axios from "axios";
 
 export const AdminPage: React.FC = () => {
+  function request(approved:boolean){
+    axios.post("http://localhost:7768/api/Admin/Evaluate", {userId:"",isApproved:approved})
+      .then(response=>console.log("succes"))
+      .catch(error=>console.log(error))
+  }
   function renderFormPage(): JSX.Element {
     return (
       <div id="admin-page" className="flex-row flex-space-between">
@@ -78,8 +84,12 @@ export const AdminPage: React.FC = () => {
               <textarea name="kitchen-additional-information" id="register__kitchen-additional-information"/>
             </li>
             <div className={"flex-row-center-x"}>
-              <li><Link to="" className="button-green-neutral button-small link">Accept Request</Link></li>
-              <li><Link to="" className="button-red-neutral button-small link">Reject Request</Link></li>
+              <li><button onClick={(e)=>{
+                e.preventDefault()
+                request(true)}} className="button-green-neutral button-small link">Accept Request</button></li>
+              <li><button  onClick={(e)=>{
+                e.preventDefault()
+                request(false)}}className="button-red-neutral button-small link">Reject Request</button></li>
             </div>
 
 

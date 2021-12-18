@@ -9,6 +9,7 @@ import {IKitchen, IManager} from "../../../models/kitchen/IKitchen";
 export const Register: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [managerRegistrationData, setManagerRegistrationData] = useState<IManager>({
+    managerId: "",
     userName: "",
     lastName: "",
     firstName: "",
@@ -16,6 +17,7 @@ export const Register: React.FC = () => {
     password: ""
   });
   const [kitchenRegistrationData, setKitchenRegistrationData] = useState<IKitchen>({
+    kitchenId: "",
     kitchenName: "",
     address: {
       country: "",

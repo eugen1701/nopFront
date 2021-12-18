@@ -6,6 +6,9 @@ import axios from "axios";
 
 export const UserEdit: React.FC = () => {
 
+  let managerChanged = false;
+  let kitchenChanged = false;
+
   const [managerInfo, setManagerInfo] = useState<IManager>({
     managerId: "",
     userName: "",
@@ -97,6 +100,7 @@ export const UserEdit: React.FC = () => {
                 name="manager-username"
                 id="register__manager-username"
                 value={managerInfo?.userName}
+                onChange={(e) => {managerChanged=true; setManagerInfo({...managerInfo, userName: e.target.value})}}
             />
           </li>
           <li className="input">
@@ -106,6 +110,7 @@ export const UserEdit: React.FC = () => {
                 name="manager-first-name"
                 id="register__manager-first-name"
                 value={managerInfo?.firstName}
+
             />
           </li>
 

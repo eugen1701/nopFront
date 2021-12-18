@@ -71,7 +71,7 @@ export const Login: React.FC = () => {
         localStorage.setItem("role", role);
         localStorage.setItem("userId", userId.toString());
         localStorage.setItem("userName", userName);
-        navigate("/user/edit");
+        navigate("/offers");
 
       } catch (error: any) {
          alert(JSON.stringify(error.response.data["message"]))

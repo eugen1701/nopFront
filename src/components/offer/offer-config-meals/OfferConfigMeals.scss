@@ -1,0 +1,26 @@
+@import "../../../assets/shared_sass/variables";
+
+#offer-config-meals {
+  width: 100%;
+  min-height: 23em;
+  background: $light-gray;
+  padding: 1.5em 3em;
+}
+
+#offer-config-meals__ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  > li {
+    padding: 1.5em 3em;
+    background: white;
+    height: 16em;
+    display: flex;
+    flex-direction: column;
+
+    > button {
+      padding: 0 !important;
+      width: auto;
+    }
+  }
+}

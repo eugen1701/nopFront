@@ -7,6 +7,7 @@ export interface IAddress {
 }
 
 export interface IManager {
+    managerId: string,
     userName: string,
     lastName: string,
     firstName: string,
@@ -15,6 +16,7 @@ export interface IManager {
 }
 
 export interface IKitchen {
+    kitchenId: string,
     kitchenName: string,
     address: IAddress,
     phoneNumber: string,

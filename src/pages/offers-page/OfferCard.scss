@@ -1,0 +1,121 @@
+@import '../../assets/shared_sass/variables';
+
+$offer-font-size-text: 1.7rem;
+$offer-font-size-subtext: .8rem;
+$offer-font-color-title: #242424;
+$offer-font-color-description: #686868;
+$offer-border-radius: 15px;
+
+.offers-page{
+
+  .card{
+    background-color: $very-light-grey;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    border-top-right-radius: $offer-border-radius;
+    border-bottom-right-radius: $offer-border-radius;
+    border-left-style: solid;
+    border-color: $green;
+    border-width: 6px;
+    height: 12rem;
+    font-weight: bold;
+
+    .price-panel{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-top-left-radius: $offer-border-radius;
+      border-bottom-left-radius: $offer-border-radius;
+      width: 5.5rem;
+
+
+
+      &-time-period{
+        background-color: $green;
+        flex: 1 0 auto;
+        width: 100%;
+        text-align: center;
+        border-top-left-radius: $offer-border-radius;
+        border-top-right-radius: $offer-border-radius;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom:10px;
+        padding-top:10px;
+
+
+        .text{
+          font-size: $offer-font-size-text;
+          color: white;
+          height: 50%
+        }
+
+        .subtext{
+          color: white;
+          font-size: $offer-font-size-subtext;
+        }
+
+      }
+
+      &-price{
+        text-align: center;
+        background-color: $green-neutral;
+        flex: 1 0 auto;
+        border-bottom-left-radius: $offer-border-radius;
+        border-bottom-right-radius: $offer-border-radius;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom:10px;
+        padding-top:10px;
+        width: 100%;
+
+
+        .text{
+          font-size: $offer-font-size-text;
+          color: $green;
+          height: 50%
+        }
+
+        .subtext{
+          color: $green;
+          font-size: $offer-font-size-subtext;
+        }
+
+      }
+
+    }
+
+    .info-panel{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 70%;
+      margin-left: 1.5rem;
+
+      &-title{
+        color: $offer-font-color-title;
+        font-size: 1.5rem;
+      }
+
+      &-description{
+        color: $offer-font-color-description;
+      }
+    }
+
+    .edit-offer-button{
+      background: none!important;
+      border: none;
+      padding: 0!important;
+      width: 10%;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $green;
+    }
+
+  }
+
+}
+

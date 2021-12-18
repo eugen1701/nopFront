@@ -4,39 +4,18 @@ import './Register.scss';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import backArrow from '../../../assets/svgs/back-arrow.svg';
-
-interface IAddress {
-  country: string,
-  city: string,
-  street: string,
-  number: string
-}
-interface IManagerRegisrationData {
-  userName: string,
-  lastName: string,
-  firstName: string,
-  email: string,
-  password: string,
-}
-
-interface IKitchenRegistrationData {
-  kitchenName: string,
-  address: IAddress,
-  phoneNumber: string,
-  contactEmailAddress: string,
-  additionalInformation: string
-}
+import {IKitchen, IManager} from "../../../models/kitchen/IKitchen";
 
 export const Register: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [managerRegistrationData, setManagerRegistrationData] = useState<IManagerRegisrationData>({
+  const [managerRegistrationData, setManagerRegistrationData] = useState<IManager>({
     userName: "",
     lastName: "",
     firstName: "",
     email: "",
     password: ""
   });
-  const [kitchenRegistrationData, setKitchenRegistrationData] = useState<IKitchenRegistrationData>({
+  const [kitchenRegistrationData, setKitchenRegistrationData] = useState<IKitchen>({
     kitchenName: "",
     address: {
       country: "",

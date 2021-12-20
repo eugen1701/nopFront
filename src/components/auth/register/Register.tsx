@@ -308,3 +308,5 @@ export const Register: React.FC = () => {
     </div>
   )
 }
+{webViewPath && (<img src={webViewPath} width={'100px'} height={'100px'}/> )}
+{!webViewPath && (<img src={'https://static.thenounproject.com/png/187803-200.png'} width={'100px'} height={'100px'}/> )}

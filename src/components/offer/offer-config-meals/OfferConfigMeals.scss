@@ -17,10 +17,10 @@
     height: 16em;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;    
 
-    > button {
-      padding: 0 !important;
-      width: auto;
+    button {
+      //padding: 0 !important;
     }
   }
 }

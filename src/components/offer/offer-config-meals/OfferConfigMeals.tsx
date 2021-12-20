@@ -8,10 +8,21 @@ export const OfferConfigMeals: React.FC<{}> = () => {
       <br />  
       <ul id="offer-config-meals__ul" className="ul">
         <li>
-          <h4 className="text-medium">Fish & Chips</h4>
-          <br />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ex tortor, dictum ac iaculis sit amet, auctor in dolor. Donec fermentum, neque vitae iaculis efficitur.</p>
-          <button className="button-no-background button-medium">Edit Meal</button>
+          <div>
+            <h4 className="text-medium">Fish & Chips</h4>
+              <ul className="ul">
+              <li>
+                <button className="button button-green-neutral button-xsmall">Fish 200g</button>
+              </li>
+            </ul>
+            <br />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ex tortor, dictum ac iaculis sit amet, auctor in dolor. Donec fermentum, neque vitae iaculis efficitur.</p>
+            <br />
+          </div>
+
+          <div>
+            <button className="button-no-background button-medium">Edit Meal</button>
+          </div>
         </li>
       </ul>
     </section>

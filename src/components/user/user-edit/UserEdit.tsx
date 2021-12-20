@@ -64,7 +64,7 @@ export const UserEdit: React.FC = () => {
       let resp = await axios.get(url, config);
       console.log("Raspuns: ", resp)
       let data = resp.data;
-      setKitchenInfo({kitchenId: data["kitchenId"], kitchenName: data["name"], address: { country: dataM["country"], city: dataM["city"], street: dataM["street"], number: dataM["addressNumber"] }, phoneNumber: dataM["phoneNumber"], contactEmailAddress: data["email"], additionalInformation: data["additionalInformation"]});
+      setKitchenInfo({kitchenId: data["kitchenId"], kitchenName: data["name"], address: { country: dataM["country"], city: dataM["city"], street: dataM["street"], number: dataM["addressNumber"] }, phoneNumber: data["contactPhoneNumber"], contactEmailAddress: data["email"], additionalInformation: data["additionalInformation"]});
     } catch (error: any) {
       alert(JSON.stringify(error.response.data["errors"], null, 2));
     }
@@ -80,13 +80,83 @@ export const UserEdit: React.FC = () => {
 
   }, []);
 
+  async function saveChangesManager() {
+    let body = {
+      id: managerInfo.managerId,
+      userName: managerInfo.userName,
+      email: managerInfo.email,
+      firstName: managerInfo.firstName,
+      lastName: managerInfo.lastName,
+      country: kitchenInfo.address.country,
+      city: kitchenInfo.address.city,
+      street: kitchenInfo.address.street,
+      addressNumber: kitchenInfo.address.number,
+      phoneNumber: kitchenInfo.phoneNumber,
+      role: "manager"
+    }
+
+    const token = localStorage.getItem("token");
+    const url = "http://localhost:7768/api/User/Edit";
+    const config = {
+      headers: {Authorization: `Bearer ${token}`}
+    };
+
+    try {
+      console.log("BODY: ", body);
+      const response = axios.put(url, body, config);
+      console.log("RESPONSE: ", response);
+    } catch (error: any) {
+      console.log(error);
+    }
+  }
+
+  async function saveChangesKitchen() {
+    let body = {
+      id: kitchenInfo.kitchenId,
+      managerID: managerInfo.managerId,
+      email: kitchenInfo.contactEmailAddress,
+      name: kitchenInfo.kitchenName,
+      contactPhoneNumber: kitchenInfo.phoneNumber,
+      additionalInformation: kitchenInfo.additionalInformation,
+      deliveryOpenHour: "it has to be set",
+      deliveryCloseHour: "it has to be set",
+    }
+    const token = localStorage.getItem("token");
+    const url = "http://localhost:7768/api/Kitchen/Edit";
+    const config = {
+      headers: {Authorization: `Bearer ${token}`}
+    };
+
+    try {
+      console.log("BODY: ", body);
+      const response = await axios.put(url, body, config);
+      console.log("RESPONSE: ", response);
+    } catch (error: any) {
+      console.log(error);
+    }
+  }
+
+  async function goBack() {
+    await navigate("/offers");//it has to be changed afterwards
+  }
+
+  async function saveChanges(event: React.MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    console.log("Entered saveChanges");
+    if(managerChanged)
+      await saveChangesManager();
+    if(kitchenChanged)
+      await saveChangesKitchen();
+  }
+
   return (
     <form id="user-edit">
       <div></div>
       <h2 className="text-black text-large">User & Kitchen Information</h2>
       <br/><br/>
-      <button id="user-edit__form-button-save" className="button-green button-medium">Save</button>
-      <button id="user-edit__form-button-back" className="button-green-bordered button-medium">Back</button>
+      <button id="user-edit__form-button-save" className="button-green button-medium"
+          onClick={async (e) => {await saveChanges(e)}}>Save</button>
+      <button id="user-edit__form-button-back" className="button-green-bordered button-medium" onClick={goBack}>Back</button>
       <br/><br/><br/>
       <div id="user-edit__form" className="flex-row">
         <ul id="user-edit__column-1" className="ul">

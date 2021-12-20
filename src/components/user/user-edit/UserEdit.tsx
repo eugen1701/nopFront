@@ -110,7 +110,7 @@ export const UserEdit: React.FC = () => {
                 name="manager-first-name"
                 id="register__manager-first-name"
                 value={managerInfo?.firstName}
-
+                onChange={(event => {managerChanged=true; setManagerInfo({...managerInfo, firstName: event.target.value})})}
             />
           </li>
 
@@ -121,6 +121,7 @@ export const UserEdit: React.FC = () => {
                 name="manager-last-name"
                 id="register__manager-last-name"
                 value={managerInfo?.lastName}
+                onChange={event => {managerChanged=true; setManagerInfo({...managerInfo, lastName: event.target.value})}}
             />
           </li>
 
@@ -131,6 +132,7 @@ export const UserEdit: React.FC = () => {
                 name="manager-email"
                 id="register__manager-email"
                 value={managerInfo?.email}
+                onChange={event => {managerChanged=true; setManagerInfo({...managerInfo, email: event.target.value})}}
             />
           </li>
 
@@ -140,7 +142,7 @@ export const UserEdit: React.FC = () => {
                 type="password"
                 name="manager-password"
                 id="register__manager-password"
-                value={"*******"}
+                value={"*******"} // I think this should be tackled in another page, to discuss with the team
             />
           </li>
         </ul>
@@ -156,6 +158,7 @@ export const UserEdit: React.FC = () => {
                 name="kitchen-name"
                 id="register__kitchen-name"
                 value={kitchenInfo?.kitchenName}
+                onChange={event => {kitchenChanged = true; setKitchenInfo({...kitchenInfo, kitchenName: event.target.value})}}
             />
           </li>
 
@@ -167,6 +170,7 @@ export const UserEdit: React.FC = () => {
                   name="kitchen-country"
                   id="register__kitchen-country"
                   value={kitchenInfo?.address?.country}
+                  onChange={event => {managerChanged = true; setKitchenInfo({...kitchenInfo, address: {...kitchenInfo.address, country: event.target.value}})}}//here the managerChanged is set to true because the address is tackled in the editManager call
               />
             </div>
   
@@ -177,6 +181,7 @@ export const UserEdit: React.FC = () => {
                   name="kitchen-city"
                   id="register__kitchen-city"
                   value={kitchenInfo?.address?.city}
+                  onChange={event => {managerChanged = true; setKitchenInfo({...kitchenInfo, address: {...kitchenInfo.address, city: event.target.value}})}}
               />
             </div>
           </li>
@@ -189,6 +194,7 @@ export const UserEdit: React.FC = () => {
                   name="kitchen-street"
                   id="register__kitchen-street"
                   value={kitchenInfo.address?.street}
+                  onChange={event => {managerChanged = true; setKitchenInfo({...kitchenInfo, address: {...kitchenInfo.address, street: event.target.value}})}}
               />
             </div>
   
@@ -199,6 +205,7 @@ export const UserEdit: React.FC = () => {
                   name="kitchen-number"
                   id="register__kitchen-number"
                   value={kitchenInfo.address?.number}
+                  onChange={event => {managerChanged = true; setKitchenInfo({...kitchenInfo, address: {...kitchenInfo.address, number: event.target.value}})}}
               />
             </div>
           </li>
@@ -210,6 +217,7 @@ export const UserEdit: React.FC = () => {
                 name="kitchen-phone-number"
                 id="register__kitchen-phone-number"
                 value={kitchenInfo?.phoneNumber}
+                onChange={event => {kitchenChanged = true; setKitchenInfo({...kitchenInfo, phoneNumber: event.target.value})}}
             />
           </li>
 
@@ -220,6 +228,7 @@ export const UserEdit: React.FC = () => {
                 name="kitchen-contact-email"
                 id="register__kitchen-contact-email"
                 value={kitchenInfo?.contactEmailAddress}
+                onChange={event => {kitchenChanged = true; setKitchenInfo({...kitchenInfo, contactEmailAddress: event.target.value})}}
             />
           </li>
 
@@ -229,6 +238,7 @@ export const UserEdit: React.FC = () => {
                 name="kitchen-additional-information"
                 id="register__kitchen-additional-information"
                 value={kitchenInfo?.additionalInformation}
+                onChange={event => {kitchenChanged = true; setKitchenInfo({...kitchenInfo, additionalInformation: event.target.value})}}
             />
           </li>
         </ul>

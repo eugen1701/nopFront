@@ -9,6 +9,7 @@ import { ManagerPage } from './pages/manager-page/ManagerPage';
 import { UserPage } from './pages/user-page/UserPage';
 import {OffersPage} from "./pages/offers-page/OffersPage";
 import { OfferConfig } from './components/offer/offer-config/OfferConfig';
+import { MealsPage } from './pages/meals-page/MealsPage';
 
 require('dotenv').config();
 
@@ -26,6 +27,7 @@ const App: React.FC = () => {
             <Route path='/user/*' element={ <UserPage /> } />
             <Route path='/offers' element={ <OffersPage/> } />
             <Route path="/offer/:id" element={ <OfferConfig /> } />
+            <Route path="/meals" element= { <MealsPage /> } />
             <Route path='/' element={ <HomePage /> } /> 
           </Routes>
         </div>

@@ -40,6 +40,10 @@
   &-xlarge {
     font-size: 3.4em;
   }
+
+  &-green {
+    color: $green;
+  }
 }
 
 .button {
@@ -146,4 +150,24 @@
   > textarea {
     height: 20em;
   }
+}
+
+.grid {
+  display: grid;
+ 
+  @for $count-cols from 1 to 6 {
+    &-#{$count-cols}-columns {
+      @extend .grid;
+      grid-template-columns: repeat($count-cols, 1fr);
+      gap: 2.5em;
+    }
+  }
+}
+
+.rounded-corners {
+  border-radius: 10px;
+}
+
+.border {
+  border: 1px solid rgb(206, 206, 206);
 }

@@ -4,6 +4,7 @@ import '../../assets/shared_sass/_styles.scss';
 import { Popup } from '../../components/base/popup/Popup';
 import Select from 'react-select';
 import axios from 'axios';
+import { IngredientCard } from '../../components/ingredient/IngredientCard';
 
 const measures = [
   { label: 'gram', value: 0 },
@@ -16,6 +17,10 @@ export const IngredientsPage: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
   const [newUnit, setNewUnit] = useState(2)
   const [newName, setNewName] = useState('');
+  const [ingredients, setIngredients] = useState<any[]>([]);
+  const config = {
+    headers: {Authorization: `Bearer ${localStorage.getItem("token")}`}
+  };
 
   async function createIngredient() {
     if (newName === '' || newName == null) {
@@ -29,18 +34,48 @@ export const IngredientsPage: React.FC = () => {
       unit: newUnit,
       meals: []
     }
-    await axios.post('http://localhost:7768/api/Ingredient/Create', requestBody);
+    await axios.post('http://localhost:7768/api/Ingredient/Create', requestBody, config);
   
     fetchIngredients();
   }
 
   const fetchIngredients = async () => {
-    const response = await axios.get('http://localhost:7768/api/Ingredient/Create')
+    console.log("asdasdasd");
+    
+    const response = await axios.get('http://localhost:7768/api/Ingredient/Get', config);
+    setIngredients(response.data);
+    console.log(`----- FETCH INGREDIENTS: ${JSON.stringify(response.data)}`)
   };
 
+  function unitIdToName(id: number) {
+    if (id == 0) {
+      return "gram"
+    }
+    else if (id == 1) {
+      return "spoon"
+    }
+    else if (id == 2) {
+      return "liter"
+    }
+    else {
+      return "none"
+    }
+  }
+
+  function rendersIngredients() {
+    const htmlIngredientsList = ingredients.map(ingredient => (
+      <li key={ingredient.id}>
+        <IngredientCard 
+          name={ingredient.name}
+          unit={unitIdToName(ingredient.unit)}
+        />
+      </li>
+    ))
+
+    return htmlIngredientsList
+  }
 
   useEffect(() => {
-
     fetchIngredients();
   }, [])
 
@@ -52,6 +87,10 @@ export const IngredientsPage: React.FC = () => {
           <button className="button-green button-small" onClick={ () => setIsPopupOpen(true) }>+ New Ingredient</button>
         </div>
       </section>
+
+      <ul id="meals-page__meals-container" className='ul grid-4-columns'>
+        { rendersIngredients() }
+      </ul>
 
       <Popup 
         title='Create a New Ingredient'

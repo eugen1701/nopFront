@@ -1,0 +1,9 @@
+@import '../../assets/shared_sass/variables';
+
+.ingredient-card {
+  height: 7em;
+  border-left: 5px solid $green;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  padding: 1.1em;
+}

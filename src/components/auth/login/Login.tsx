@@ -76,6 +76,7 @@ export const Login: React.FC = () => {
         navigate("/offers");
 
       } catch (error: any) {
+         console.log(error);
          alert(JSON.stringify(error.response.data["message"]))
       }
     }

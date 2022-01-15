@@ -1,7 +1,21 @@
-import { IIngredient } from "../ingredient/IIngredient";
-
 export interface IMeal {
-  title: string,
+  mealId: string,
+  name: string,
+  kitchenId: string,
   description: string,
-  ingredients: Array<IIngredient>
+  kcal: 0,
+  ingredients: [
+    {
+      mealId: string,
+      ingredientId: string,
+      quantity: 0
+    }
+  ]
+}
+
+export interface IIngredient {
+  id: string,
+  name: string,
+  kitchenId: string,
+  unit: string
 }

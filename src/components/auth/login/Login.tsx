@@ -27,7 +27,8 @@ export interface AuthProps{
   token: string,
   userId: number,
   userName: string,
-  role: string
+  role: string,
+  kitchenId: string
 }
 
 export const config = {
@@ -62,7 +63,7 @@ export const Login: React.FC = () => {
 
     async function authenticate() {
       try{
-        const {token, role, userId, userName} = await loginFn(email, password);
+        const {token, role, userId, userName, kitchenId} = await loginFn(email, password);
 
         if (canceled)
           return;
@@ -70,6 +71,7 @@ export const Login: React.FC = () => {
         localStorage.setItem("token", token);
         localStorage.setItem("role", role);
         localStorage.setItem("userId", userId.toString());
+        localStorage.setItem("kitchenId", kitchenId.toString());
         localStorage.setItem("userName", userName);
         navigate("/offers");
 

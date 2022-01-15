@@ -1,12 +1,15 @@
-.offers-page{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.offers{
 
-  .card-container{
+  &-page{
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .card-container{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
   }
 }

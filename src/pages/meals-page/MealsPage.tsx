@@ -35,6 +35,7 @@ export const MealsPage: React.FC = () => {
         description='Configure the meal below.'
         isOpen={ isPopupOpen }
         onCancel={ () => setIsPopupOpen(false) }
+        onFinish={ () => console.log("finish") }
       >
         <form>
           <ul className="ul">

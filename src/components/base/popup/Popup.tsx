@@ -5,7 +5,8 @@ interface Popup {
   title: string,
   description: string,
   isOpen: boolean,
-  onCancel: () => void
+  onCancel: () => void,
+  onFinish: () => void
 }
 
 export const Popup: React.FC<Popup> = (props) => {
@@ -24,7 +25,7 @@ export const Popup: React.FC<Popup> = (props) => {
         <br />
         <div className='flex-row'>
           <button className='button button-gray button-xsmall' onClick={ () => props.onCancel() }>Cancel</button>
-          <button className='button button-green flex-pull-right button-xsmall'>Finish</button>
+          <button className='button button-green flex-pull-right button-xsmall' onClick={ () => props.onFinish() }>Finish</button>
         </div>
       </div>
     </div>

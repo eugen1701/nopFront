@@ -5,6 +5,8 @@ import { MealCard } from '../../components/meal/meal-card/MealCard';
 import { IMeal } from '../../models/meal/IMeal';
 import { IIngredient } from '../../models/ingredient/IIngredient';
 import { Popup } from '../../components/base/popup/Popup';
+import Searchable from 'react-searchable-dropdown';
+import { Link } from 'react-router-dom';
 
 
 export const MealsPage: React.FC = () => {
@@ -47,6 +49,30 @@ export const MealsPage: React.FC = () => {
             <li className="input">
               <label htmlFor="meal-description">Description</label>
               <textarea name="meal-description" />
+            </li>
+
+            <li>
+              <div className='flex-row-center-y'>
+                <label htmlFor="meal-ingredients">Ingredients</label>
+                <Link to="/ingredients" className="button-no-background button-small link flex-pull-right">Create New Ingredient</Link>
+              </div>
+              <Searchable
+                value=""
+                placeholder="Search" // by default "Search"
+                notFoundText="No result found" // by default "No result found"
+                noInput
+                options={[{
+                    value: '',
+                    label: 'All'
+                }, {
+                    value: 'popular',
+                    label: 'Popular'
+                }]}
+                onSelect={(value: any) => {
+                    console.log(value);
+                }}
+                listMaxHeight={200} //by default 140
+              />
             </li>
           </ul>
         </form>

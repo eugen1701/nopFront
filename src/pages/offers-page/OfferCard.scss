@@ -105,7 +105,8 @@ $offer-border-radius: 15px;
       }
     }
 
-    .edit-offer-button{
+    .edit-offer-link{
+      text-decoration: none;
       background: none!important;
       border: none;
       padding: 0!important;

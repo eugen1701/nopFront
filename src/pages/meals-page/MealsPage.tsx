@@ -4,12 +4,20 @@ import '../../assets/shared_sass/_styles.scss';
 import { MealCard } from '../../components/meal/meal-card/MealCard';
 import { IMeal } from '../../models/meal/IMeal';
 import { IIngredient } from '../../models/ingredient/IIngredient';
+import { Popup } from '../../components/base/popup/Popup';
 
 
 export const MealsPage: React.FC = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+
   return (
     <div id="meals-page">
-      <h1 className='text-black text-large'>Meals</h1>
+      <section className='flex-row-center-y'>
+        <h1 className='text-black text-large'>Meals</h1>
+        <div className='flex-pull-right'>
+          <button className="button-green button-small" onClick={ () => setIsPopupOpen(true) }>+ New Meal</button>
+        </div>
+      </section>
       <br />
 
       <ul id="meals-page__meals-container" className='ul grid-3-columns'>
@@ -21,6 +29,27 @@ export const MealsPage: React.FC = () => {
           />
         </li>
       </ul>
+
+      <Popup 
+        title='Create a New Meal'
+        description='Configure the meal below.'
+        isOpen={ isPopupOpen }
+        onCancel={ () => setIsPopupOpen(false) }
+      >
+        <form>
+          <ul className="ul">
+            <li className="input">
+              <label htmlFor="meal-title">Title</label>
+              <input type="text" name="meal-title" />
+            </li>
+
+            <li className="input">
+              <label htmlFor="meal-description">Description</label>
+              <textarea name="meal-description" />
+            </li>
+          </ul>
+        </form>
+      </Popup>
     </div>
   );
 }

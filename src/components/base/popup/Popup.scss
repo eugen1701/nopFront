@@ -1,0 +1,32 @@
+@import "../../../assets/shared_sass/variables";
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-content: center;
+
+  &__content {
+    background-color: white;
+    border: 1px solid $light-gray;
+    padding: 2em;
+  }
+}
+
+form {
+  width: 25em;
+
+  li {
+    margin-bottom: 1em;
+  }
+}
+
+input {
+  height: 3em;
+}

@@ -40,6 +40,10 @@
   &-xlarge {
     font-size: 3.4em;
   }
+
+  &-green {
+    color: $green;
+  }
 }
 
 .button {
@@ -79,18 +83,23 @@
     color: $green;
   }
 
+  &-gray {
+    background: #DFDFDF;
+    color: #000;
+  }
+
   &-xsmall {
     padding: 0.3em 1em;
     font-size: 1em;
   }
 
   &-small {
-    padding: 0.4em 2em;
+    padding: 0.6em 1.3em;
     font-size: 1em;
   }
 
   &-medium {
-    padding: 0.7em 2.3em;
+    padding: 0.7em 1.5em;
     font-size: 1.1em;
   }
 
@@ -144,6 +153,30 @@
   }
 
   > textarea {
-    height: 20em;
+    height: 12em;
   }
+}
+
+.grid {
+  display: grid;
+ 
+  @for $count-cols from 1 to 6 {
+    &-#{$count-cols}-columns {
+      @extend .grid;
+      grid-template-columns: repeat($count-cols, 1fr);
+      gap: 2.5em;
+    }
+  }
+}
+
+.rounded-corners {
+  border-radius: 10px;
+}
+
+.border {
+  border: 1px solid rgb(224, 224, 224);
+}
+
+.hidden {
+  display: none !important;
 }

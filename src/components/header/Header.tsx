@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
         <nav id="header__nav" className="flex-row">
           <ul id="header__nav-links" className="ul">
             <li><Link to="/" className="link text-bold">Home</Link></li>
-            <li><Link to="/" className="link text-bold">About Us</Link></li>
+            <li><Link to="/about" className="link text-bold">About Us</Link></li>
             <li><Link to="/" className="link text-bold">Service</Link></li>
             <li><Link to="/" className="link text-bold">Contact</Link></li>
           </ul>

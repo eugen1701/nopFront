@@ -11,6 +11,7 @@ import {OffersPage} from "./pages/offers-page/OffersPage";
 import { OfferConfig } from './components/offer/offer-config/OfferConfig';
 import { MealsPage } from './pages/meals-page/MealsPage';
 import { IngredientsPage } from './pages/ingredients-page/IngredientsPage';
+import {AboutPage} from "./pages/about-page/AboutPage";
 
 require('dotenv').config();
 
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path='/auth/*' element={ <AuthPage /> } />
             <Route path='/admin' element={ <AdminPage /> } />
+            <Route path='/about' element={ <AboutPage /> } />
             <Route path='/manager' element={ <ManagerPage /> } />
             <Route path='/user/*' element={ <UserPage /> } />
             <Route path='/offers' element={ <OffersPage/> } />

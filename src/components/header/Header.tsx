@@ -21,8 +21,9 @@ export const Header: React.FC = () => {
           <ul id="header__nav-links" className="ul">
             <li><Link to="/" className="link text-bold">Home</Link></li>
             <li><Link to="/" className="link text-bold">About Us</Link></li>
-            <li><Link to="/" className="link text-bold">Service</Link></li>
-            <li><Link to="/" className="link text-bold">Contact</Link></li>
+            <li><Link to="/offers" className="link text-bold">Offers</Link></li>
+              <li><Link to="/meals" className="link text-bold">Meals</Link></li>
+              <li><Link to="/ingredients" className="link text-bold">Ingredients</Link></li>
           </ul>
         </nav>
       </div>

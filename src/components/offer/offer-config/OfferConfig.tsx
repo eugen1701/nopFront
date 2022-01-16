@@ -13,6 +13,7 @@ export const OfferConfig: React.FC = () => {
     const [currentDay, setCurrentDay] = useState<number>(1);
     const weekRadioButtonsTexts = initWeekRadioButtonsTexts();
     const dayRadioButtonsTexts = initDayRadioButtonsTexts();
+    const [dayId, setDayId] = useState<string>("");
 
     async function getOffer() {
         let offerID = document.URL.slice(document.URL.lastIndexOf("/") + 1);
@@ -35,12 +36,15 @@ export const OfferConfig: React.FC = () => {
 
     const [meals, setMeals] = useState<Array<IMeal>>([])
     const getMeals = async () => {
+        await getMealsForSelect();
         const offer1 = await getOffer();
-        const indexDay = (currentWeek-1) * 7 + currentDay-1;
+        const indexDay = (currentWeek-1) * 7 + currentDay;
         console.log("current day"+ currentDay);
         const token = localStorage.getItem("token");
         console.log("offer: ", offer1);
         console.log("indexDay: ", indexDay);
+        setDayId(offer1.dayIds[indexDay]);
+        console.log("day id: ", dayId);
         const url =  `http://localhost:7768/api/Meal/Day/${offer1.dayIds[indexDay]}`;
 
         const config = {
@@ -56,7 +60,8 @@ export const OfferConfig: React.FC = () => {
     }
     useEffect(() => {
         console.log("hello useeffect");
-        getMeals();
+        getMeals().then();
+
     }, []);
 
   function initWeekRadioButtonsTexts() {
@@ -73,10 +78,38 @@ export const OfferConfig: React.FC = () => {
     return ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   }
 
+    const [allMeals, setAllMeals] = useState<Array<any>>([]);
+    const [mealsForSelect, setMealsForSelect] = useState<Array<any>>([]);
+    const fetchMeals = async () => {
+        const token = localStorage.getItem("token");
+        const config = {
+            headers: {Authorization: `Bearer ${token}`}
+        }
+        try {
+            const response = await axios.get('http://localhost:7768/api/Meal/Get', config);
+            setAllMeals(response.data);
+            console.log(`----- FETCH MEALS: ${JSON.stringify(response.data)}`)
+        } catch(e) {
+            alert("Some error occured while fetching meals");
+            console.log(e);
+        }
+    };
+
+    async function getMealsForSelect() {
+        await fetchMeals();
+        const arr = allMeals.map(meal => {
+            return {
+                value: meal.id,
+                label: meal.name
+            }
+
+        })
+        setMealsForSelect(arr);
+    }
 
   return (
     <div id="offer-config">
-      <h1 className="text-black text-large">Configure Standard Offer</h1>
+      <h1 className="text-black text-large">Configure {offer.title}</h1>
       <br />
 
       <h2>Week</h2>
@@ -97,7 +130,7 @@ export const OfferConfig: React.FC = () => {
       />
       <br /><br />
 
-      <OfferConfigMeals currentDay={currentDay} currentWeek={currentWeek} meals={meals}/>
+      <OfferConfigMeals currentDay={currentDay} currentWeek={currentWeek} meals={meals} mealsForSelect={mealsForSelect} offer={offer} dayId={dayId}/>
     </div>
   )
 }
